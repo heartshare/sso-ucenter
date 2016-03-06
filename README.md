@@ -16,22 +16,19 @@
 
 
 实现原理：
-          app1.com                                                                         app2.com
-       -------------                                                                 ------------------
-         1.登录界面 提交                                                              3.3  登录逻辑 设置cookie
+       app1.com                                           
+       -------------                                                                 
+         1.登录界面 提交                                                              
          2.登录逻辑
          3.1 curl调用ucenter api（uc_user_synlogin），传递加密参数uid,uname 
 
-
-
-
-
-
-
-                   ucenter.com
-             -----------------------
-              3.2 解密参数uid,uname,查询需要同步登录的站点，生成html,通知各个应用设置自己的cookie
-               <script src='wwww.app2.com/uc_client/uc.php?param=authcode'></script>
+     ucenter.com
+     -------------
+     3.2 解密参数uid,uname,查询需要同步登录的站点，生成html,通知各个应用设置自己的cookie
+          <script src='wwww.app2.com/uc_client/uc.php?param=authcode'></script>
+    app2.com
+    --------------          
+    3.3  登录逻辑 设置cookie
                   
 
 
